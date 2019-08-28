@@ -1,0 +1,14 @@
+UNF Doc_office(PatientNumber, PatientName, BirthDate,PrescriptionNumber, Medicine, Dosage, DoctorNumber, Doctor, Assistent)
+
+1NF Patient(PatientNumber, PatientName,BirthDate, DoctorNumber, Doctor, Assistent)
+    Medicine(PatientNumber, PrescriptionNumber, Medicine, Dosage)
+
+
+2NF Patient(PatientNumber, PatientName,BirthDate, DoctorID)
+    Medicine(PatientNumber, PrescriptionNumber, Medicine, Dosage)
+    DoctorID(PatientNumber, DoctorNumber, Doctor, Assistent)
+
+3NF Patient(PatientNumber, PatientName,BirthDate, DoctorID)
+    Medicine(PatientNumber, PrescriptionNumber)
+    Prescription(PrescriptionNumber, Medicine, Dosage)
+    DoctorID(PatientNumber,DoctorNumber, Doctor, Assistent)
